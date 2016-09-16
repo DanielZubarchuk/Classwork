@@ -4,13 +4,16 @@ public class OOPExample {
 
 	public static void main(String[] args) {
 		Student jillian = new Senior("Jillian");
-		Student jordan = new Junior("Jordan");
-		Student joseph = new Freshie("Joseph");
+		Junior jordan = new Junior("Jordan", "98");
+		Student joseph = new Freshie("Joseph", "Lazy");
 		
 		
 		jillian.talk();
-		joseph.talk();
+		
 		jordan.talk();
+		jordan.boastScore();
+		
+		((Freshie)joseph).talk();
 		
 	}
 

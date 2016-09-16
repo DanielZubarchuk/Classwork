@@ -1,9 +1,12 @@
 package introduction;
 
 public class Freshie extends Student {
+	
+	String characteristic;
 
-	public Freshie(String name) {
+	public Freshie(String name, String quality) {
 		super(name);
+		this.characteristic = quality;
 		// TODO Auto-generated constructor stub
 	}
 	
