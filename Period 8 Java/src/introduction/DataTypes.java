@@ -21,6 +21,18 @@ public class DataTypes {
 		System.out.println("d3 : " + d3);  
 		System.out.println("d1 - d2 : " + (d1 - d2));
 
+		
+		String s = "Happy "+(54/3)+"th birthday!";
+		System.out.println(s);
+		
+		int m = 22;
+		int n = 7;
+		System.out.println("m/n is "+(m/n));
+	
+		
+	
+		
+		
 	}
 
 }
