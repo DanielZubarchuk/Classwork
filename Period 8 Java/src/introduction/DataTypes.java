@@ -9,7 +9,8 @@ public class DataTypes {
 		System.out.println(3+5.0/2+5*2);
 		System.out.println(3.0+5/2+5*2);
 		System.out.println((int)(3.0 + 5)/(2 + 5*2));
-		if(42 == 42.0) System.out.println("42 equals 42.0");
+		
+		//if(42 == 42.0) System.out.println("42 equals 42.0");
 		
 		
 		double d1 = 4.64; 
@@ -29,6 +30,15 @@ public class DataTypes {
 		int n = 7;
 		System.out.println("m/n is "+(m/n));
 	
+		String ten = "10";
+		String two = "2";
+		
+		if(ten.compareTo(two)>0){
+			System.out.println("10 is greater than two");
+		}
+		else{
+			System.out.println("10 is not greater than two");
+		}
 		
 	
 		
