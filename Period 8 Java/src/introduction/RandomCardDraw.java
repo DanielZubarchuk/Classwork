@@ -7,14 +7,22 @@ public class RandomCardDraw {
 		String[]suits = {"Diamonds","Spades","Clubs","Hearts"};
 		
 		for(int i = 0; index < 52; i ++){
-			System.out.println("Draw #"+ (i+1)+": "+drawRandomCard());	
+			System.out.println("Draw #"+ (i+1)+": "+ranks[drawRandomRank()]+"Of"+suits[drawRandomSuit()]);	
 		}
 		
 
 	}
 	
-	public static void drawRandomCard() {
-		
+	public static void drawRandomRank() {
+		double rand = Math.random();
+		int rank = (int) (12*rand); 
+		return rank;
+	}
+	
+	public static void drawRandomSuit() {
+		double rand = Math.random();
+		int suit = (int) (12*rand); 
+		return suit;
 	}
 
 }
