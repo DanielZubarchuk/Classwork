@@ -10,6 +10,9 @@ public class RandomCardDraw {
 		
 		System.out.println(ranks[rank]+" Of "+suits[suit]);	
 
+	
 	}
+	
+	
 
 }
