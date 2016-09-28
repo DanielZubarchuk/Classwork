@@ -20,4 +20,16 @@ public class DanielSchool implements Chatbot{
 		}
 	}
 
+	
+	public boolean isTriggered(String userInput) {
+		String[] triggers = {"school", "class", "teacher"};
+		if(DanielMain.findKeyword(userInput, "school", 0) >= 0){
+			return true;
+		}
+		if(DanielMain.findKeyword(userInput, "class", 0) >= 0){
+			return true;
+		}
+		return false;
+	}
+
 }

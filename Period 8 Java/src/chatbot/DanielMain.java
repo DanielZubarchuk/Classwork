@@ -42,7 +42,7 @@ public class DanielMain {
 		}
 	}
 
-	private static int findKeyword(String searchString, String keyword, int startpsn) {
+	public static int findKeyword(String searchString, String keyword, int startpsn) {
 		searchString = searchString.trim();
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
@@ -76,6 +76,7 @@ public class DanielMain {
 
 	/**
 	 * Annotations
+	 * Helper methods are private methods that are to be used in other methods, they make the code readable.
 	 * READABLE
 	 * @param searchString
 	 * @param psn
