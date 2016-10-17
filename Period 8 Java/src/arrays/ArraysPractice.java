@@ -21,7 +21,7 @@ public class ArraysPractice {
 	}
 	
 	private static void makeSpecial(String s) {
-		s = "ThIS STRING IS SPECIAL";
+		s = "ThIS STRING IS SPECIAL"; 
 		
 	}
 
