@@ -6,6 +6,40 @@ public class ArraysPractice {
 
 	public static void main(String[] args) {
 		
+		long currentTime = System.currentTimeMillis();
+		
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		print(someStrings);
+		
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took "+(endTime-currentTime) + " ms.");
+		
+	}
+	
+	private static void makeSpecial(String s) {
+		s = "ThIS STRING IS SPECIAL";
+		
+	}
+
+	private static void print(String[] s) {
+		for(int i = 0; i < s.length; i++){
+			System.out.println(s[i]);
+		}
+		
+	}
+
+	private static void standardPopulate(String[] s) {
+		for(int i = 0; i < s.length; i++){
+			s[i] = "String #"+(i+1);
+		}
+		
+	}
+
+	public static void initializeArraysExample(){
 		boolean[] boos1 = new boolean[3];
 		//this can ONLY be done at the declaration
 		//because it sets size and content
@@ -49,8 +83,6 @@ public class ArraysPractice {
 		for(String s: someStrings1){
 			System.out.println(s);
 		}
-		
-		
 		
 	}
 
