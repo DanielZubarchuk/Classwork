@@ -8,11 +8,18 @@ public class ArraysPractice {
 		
 		long currentTime = System.currentTimeMillis();
 		
-		String[] someStrings = new String[1000];
-		standardPopulate(someStrings);
-		String s = someStrings[999];
-		makeSpecial(s);
-		print(someStrings);
+		//int totalNumbers = 50;
+		int[] fiftyNumbers = new int[50000];
+		//populate(fiftyNumbers);
+		//print(fiftyNumbers);
+		//randomize(fiftyNumbers);
+		//print(fiftyNumbers);
+		rollDice(fiftyNumbers, 4);
+		print(fiftyNumbers);
+		//count each die roll and provide a percentage
+		countResult(fiftyNumbers, 4);
+		
+		
 		
 		
 		long endTime = System.currentTimeMillis();
@@ -20,6 +27,74 @@ public class ArraysPractice {
 		
 	}
 	
+	private static void countResult(int[] m, int numberOfDice) {
+		System.out.println("CountResultMethod");
+		int[] counter = new int[numberOfDice*6];
+		for(int n: m){
+			counter[n-1] = counter[n-1] +1;
+		}
+		for(int i = 0; i < counter.length; i ++){
+			System.out.println((i+1)+" appeared " + 100*counter[i]/m.length +" %.");
+		}
+		
+	}
+
+	private static void rollDice(int[] n, int numberOfDice) {
+		System.out.println("RollDiceMethod");
+		
+		for(int i = 0; i < n.length; i++){
+			int dice = 0;
+			for(int j = 0; j < numberOfDice; j++){
+				dice = dice + (int) (1 + (Math.random()*6));
+			}
+			n[i] = dice;
+		}	
+		
+	}
+
+	private static void randomize(int[] n) {
+		for(int i = 0; i < n.length; i++){
+			int rand =(int) (1 + (Math.random()*6));
+			n[i] = rand;
+		}
+		
+	}
+	
+	private static void print(int[] n) {
+		for(int i = 0; i < n.length; i++){
+			System.out.println(n[i]);
+		}
+		
+	}
+
+	private static void populate(int[] n) {
+		for(int i = 0; i < n.length; i++){
+			n[i] = i + 1;
+		}
+		
+	}
+	
+	
+
+	
+
+	private void demonstratePassByValue(){
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		someStrings[999] = getASpecialString();
+		print(someStrings);
+		
+		
+		
+	}
+	
+	private static String getASpecialString() {
+		String s = "SPECIAL STRING";
+		return s;
+	}
+
 	private static void makeSpecial(String s) {
 		s = "ThIS STRING IS SPECIAL"; 
 		
@@ -38,7 +113,7 @@ public class ArraysPractice {
 		}
 		
 	}
-
+	
 	public static void initializeArraysExample(){
 		boolean[] boos1 = new boolean[3];
 		//this can ONLY be done at the declaration
