@@ -13,13 +13,18 @@ public class ArrayMethodHomework {
 	      * says that it isn't perfect!
 	      * */
 	    }
-	    
+	 
 	    public static int searchUnsorted(int[] arrayToSearch, int key){
 	    /**
 	     * this method take an unsorted int array (arrayToSearch) and returns an 
 	     * int corresponding to the index of a key, if it is in the array
 	     * if the key is not in the array, this method returns -1
 	     * */
+	    	for(int i = 0; i < arrayToSearch.length; i++ ){
+	    		if(arrayToSearch[i] == key){
+	    			return i;
+	    		}
+	 		}
 	     return -1;
 	    }
 	    
@@ -31,6 +36,12 @@ public class ArrayMethodHomework {
 	     * 
 	     * Note: You should attempt to write a method that is more efficient that searchUnsorted
 	     * */
+	    	for(int i = sortedArrayToSearch.length - 1; i > -1; i-- ){
+	    		if(sortedArrayToSearch[i] == key){
+	    			return i;
+	    		}
+	 			
+	 		}
 	     return -1;
 	    }
 	    
@@ -38,8 +49,13 @@ public class ArrayMethodHomework {
 	        /**
 	         * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
 	         * */
-	        return false;
-	    }
+	    	 for(int i = 0; i < array.length - 1; i++){
+	    		 if (array[i] < array[i+1]){
+	    			 return false;
+	    		 }
+	    	 }
+			return true;
+	    } 
 	    
 	    
 	    public static double[] getStats(double[] array){
