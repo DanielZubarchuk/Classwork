@@ -39,7 +39,6 @@ public class Quiz1 {
 				}else{
 					System.out.println("Wrong Password! You have "+triesRemaining+ " left.");
 				}
-				
 			}
 		}
 	}
