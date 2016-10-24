@@ -128,8 +128,60 @@ public class ArrayMethodHomework {
 	         *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
 	         * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
 	         * */
+	        int longest = 1;
+	        boolean isSequence = false;
+	        int seqLength = 0;
+	        if(array1.length > array2.length){
+	            for(int i = 0; i < array1.length; i++){
+	                for(int j = 0; j < array2.length; j++){
+	                    //System.out.println("j = " + j + " i = " + i);
+	                    if(array1[i] == array2[j]){
+	                        isSequence = true;
+	                    }else{
+	                        isSequence = false;  
+	                    }
+	                    //System.out.println(isSequence);
+	                    if(isSequence){
+	                        seqLength ++;
+	                        i++;
+	                        //System.out.println("seqLength = " + seqLength);
+	                    }else if(seqLength > longest){
+	                        longest = seqLength;
+	                        seqLength = 0;
+	                    }else{
+	                        seqLength = 0;
+	                    }
+	                }
+	            }
+	        }else{
+	            for(int i = 0; i < array2.length; i++){
+	                for(int j = 0; j < array1.length; j++){
+	                    //System.out.println("j = " + j + " i = " + i);
+	                    if(array2[i] == array1[j]){
+	                        isSequence = true;
+	                    }else{
+	                        isSequence = false;  
+	                    }
+	                    //System.out.println(isSequence);
+	                    if(isSequence){
+	                        seqLength ++;
+	                        i++;
+	                        //System.out.println("seqLength = " + seqLength);
+	                    }else if(seqLength > longest){
+	                        longest = seqLength;
+	                        seqLength = 0;
+	                    }else{
+	                        seqLength = 0;
+	                    }
+	                }
+	            }
+	        }
+	        if(seqLength > longest){
+	            return seqLength;
+	        }else{
+	            return longest;
+	        }
 	        
-	        return 0;
 	    }
 
 	    public static int[] generateDistinctItemsList(int n){
@@ -140,7 +192,22 @@ public class ArrayMethodHomework {
 	         * contains only entries between 1 and 2n (inclusive) and has no duplicates
 	         * 
 	         * */
-	        return null; 
+	        int[] arr = new int[n];
+	        int rng;
+	        for(int i = 0; i < arr.length; i++){
+	            boolean original = false;
+	            do{
+	                rng = (int)(Math.random()*(2*n))+1;
+	                original = true;
+	                for(int j = 0; j < arr.length; j++){
+	                    if(rng == arr[j]){
+	                        original = false;
+	                    }
+	                }
+	            }while(!original);
+	            arr[i] = rng;
+	        }
+	        return arr; 
 	    }
 	    
 	    
@@ -167,7 +234,26 @@ public class ArrayMethodHomework {
 	         * CHALLENGE
 	         * For extra credit, make your method handle NEGATIVE n
 	         * */
+	         
+	         /*
+	         int[] arr = new int[array.length];
+	         int shift = array.length % n;
+	         for(int i = shift; i < arr.length; i++){
+	             arr[i-shift] = array[shift];
+	         }
+	         for(int i = 0; i < shift; i++){
+	             arr[arr.length-(shift-i)] = array[i];
+	         }
+	         return arr;
+	         */
+	         int temp;
+	         for(int j = 0; j < n; j++){
+	             temp = array[0];
+	             for(int i = 1; i < array.length; i++){
+	                 array[i-1] = array[i];
+	             }
+	             array[array.length-1] = temp;
+	         }
 	    }
-	    
 
 }
