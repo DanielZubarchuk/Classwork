@@ -235,23 +235,11 @@ public class ArrayMethodHomework {
 	         * CHALLENGE
 	         * For extra credit, make your method handle NEGATIVE n
 	         * */
-	         
-	         /*
-	         int[] arr = new int[array.length];
-	         int shift = array.length % n;
-	         for(int i = shift; i < arr.length; i++){
-	             arr[i-shift] = array[shift];
-	         }
-	         for(int i = 0; i < shift; i++){
-	             arr[arr.length-(shift-i)] = array[i];
-	         }
-	         return arr;
-	         */
 	         int temp;
-	         for(int j = 0; j < n; j++){
+	         for(int i = 0; i < n; i++){
 	             temp = array[0];
-	             for(int i = 1; i < array.length; i++){
-	                 array[i-1] = array[i];
+	             for(int a = 1; a < array.length; a++){
+	                 array[a-1] = array[a];
 	             }
 	             array[array.length-1] = temp;
 	         }
