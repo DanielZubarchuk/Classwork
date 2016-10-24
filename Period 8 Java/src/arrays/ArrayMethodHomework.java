@@ -69,6 +69,7 @@ public class ArrayMethodHomework {
 	         * index 4 = the number of values greater than or equal to the mean
 	         * index 5 = the number of values below the mean
 	         * */
+	    	
 	         double[] stats = new double[6];
 	         return stats;
 	    }
