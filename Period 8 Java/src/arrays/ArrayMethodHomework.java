@@ -69,10 +69,41 @@ public class ArrayMethodHomework {
 	         * index 4 = the number of values greater than or equal to the mean
 	         * index 5 = the number of values below the mean
 	         * */
-	    	
+	    	 
 	         double[] stats = new double[6];
+	         sortArray(array);
+	         
+	         stats[0] = ;
+	         stats[1] = array[];
+	         stats[2] = array[0];
+	         stats[3] = ;
+	         stats[4] = ;
+	         stats[5] = ;
 	         return stats;
 	    }
+	    
+	    
+	    private static void sortArray(double[] array) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		private static getMean(){
+	    	
+	    }
+		
+		private static getValuesGreater(){
+			
+		}
+		
+		private static getValuesLess(){
+			
+		}
+		private static getMedian(){
+			
+		}
+		
+		
 	    
 	    public static void reverseOrder(int[] array){
 	        /**
@@ -135,17 +166,15 @@ public class ArrayMethodHomework {
 	        if(array1.length > array2.length){
 	            for(int i = 0; i < array1.length; i++){
 	                for(int j = 0; j < array2.length; j++){
-	                    //System.out.println("j = " + j + " i = " + i);
+	                    
 	                    if(array1[i] == array2[j]){
 	                        isSequence = true;
 	                    }else{
 	                        isSequence = false;  
 	                    }
-	                    //System.out.println(isSequence);
 	                    if(isSequence){
 	                        seqLength ++;
-	                        i++;
-	                        //System.out.println("seqLength = " + seqLength);
+	                        i++;  
 	                    }else if(seqLength > longest){
 	                        longest = seqLength;
 	                        seqLength = 0;
@@ -157,23 +186,21 @@ public class ArrayMethodHomework {
 	        }else{
 	            for(int i = 0; i < array2.length; i++){
 	                for(int j = 0; j < array1.length; j++){
-	                    //System.out.println("j = " + j + " i = " + i);
+	                    
 	                    if(array2[i] == array1[j]){
 	                        isSequence = true;
 	                    }else{
 	                        isSequence = false;  
 	                    }
-	                    //System.out.println(isSequence);
+	                    
 	                    if(isSequence){
 	                        seqLength ++;
 	                        i++;
-	                        //System.out.println("seqLength = " + seqLength);
 	                    }else if(seqLength > longest){
 	                        longest = seqLength;
 	                        seqLength = 0;
 	                    }else{
-	                        seqLength = 0;
-	                        
+	                        seqLength = 0;    
 	                    }
 	                }
 	            }
