@@ -172,6 +172,7 @@ public class ArrayMethodHomework {
 	                        seqLength = 0;
 	                    }else{
 	                        seqLength = 0;
+	                        
 	                    }
 	                }
 	            }
