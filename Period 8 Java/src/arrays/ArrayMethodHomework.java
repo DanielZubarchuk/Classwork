@@ -103,16 +103,16 @@ public class ArrayMethodHomework {
 		private static double getMedian(double[] array) {
 			int middle = 0;
 			
-			return median;
+			return 0;
 		}
 		
 		private static double getValuesLess(double[] array) {
-			// TODO Auto-generated method stub
+			
 			return 0;
 		}
 
 		private static double getValuesGreater(double[] array) {
-			// TODO Auto-generated method stub
+			
 			return 0;
 		}
 		
