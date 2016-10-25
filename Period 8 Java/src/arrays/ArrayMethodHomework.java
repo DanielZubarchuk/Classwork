@@ -2,7 +2,9 @@ package arrays;
 
 public class ArrayMethodHomework {
 
-	 public static void main(String[] args) {
+	 private static int average;
+
+	public static void main(String[] args) {
 		    
 	     /**
 	      * IMPORTANT NOTE: 
@@ -73,35 +75,47 @@ public class ArrayMethodHomework {
 	         double[] stats = new double[6];
 	         sortArray(array);
 	         
-	         stats[0] = ;
+	         stats[0] = getMean(array);
 	         stats[1] = array[];
 	         stats[2] = array[0];
-	         stats[3] = ;
-	         stats[4] = ;
-	         stats[5] = ;
+	         stats[3] = getMedian(array);
+	         stats[4] = getValuesGreater(array);
+	         stats[5] = getValuesLess(array);
 	         return stats;
 	    }
-	    
-	    
-	    private static void sortArray(double[] array) {
-			// TODO Auto-generated method stub
-			
+	   
+		private static Object sortArray(double[] array) {
+			Object sortedArray = null;
+			return sortedArray;
 		}
 
-		private static getMean(){
+		private static double getMean(double[] array){
+			double average = 0;
+	    	for(int i = 0; i < array.length; i++){
+	    		average = average + array[i];
+	    	}
 	    	
+			double mean = average / array.length;
+			
+			return mean;
 	    }
 		
-		private static getValuesGreater(){
+		private static double getMedian(double[] array) {
+			int middle = 0;
 			
+			return median;
 		}
 		
-		private static getValuesLess(){
-			
+		private static double getValuesLess(double[] array) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
-		private static getMedian(){
-			
+
+		private static double getValuesGreater(double[] array) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
+		
 		
 		
 	    
