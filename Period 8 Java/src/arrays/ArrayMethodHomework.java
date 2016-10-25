@@ -118,6 +118,11 @@ public class ArrayMethodHomework {
 	         * array = {-6, 16, 10, 9, 1, 5}
 	         * 
 	         * */
+	    	for (int i = 0; i < (array.length/2); i++){
+	    		int placeholder = array[i];
+	    		array[i] = array[(array.length-1) - i];
+	    		array[array.length-i-1] = placeholder;
+	    	}
 	    }
 	    
 	    public static int countDifferences(int[] array1, int[] array2){
@@ -166,7 +171,6 @@ public class ArrayMethodHomework {
 	        if(array1.length > array2.length){
 	            for(int i = 0; i < array1.length; i++){
 	                for(int j = 0; j < array2.length; j++){
-	                    
 	                    if(array1[i] == array2[j]){
 	                        isSequence = true;
 	                    }else{
@@ -174,7 +178,7 @@ public class ArrayMethodHomework {
 	                    }
 	                    if(isSequence){
 	                        seqLength ++;
-	                        i++;  
+	                        i++;
 	                    }else if(seqLength > longest){
 	                        longest = seqLength;
 	                        seqLength = 0;
@@ -186,13 +190,11 @@ public class ArrayMethodHomework {
 	        }else{
 	            for(int i = 0; i < array2.length; i++){
 	                for(int j = 0; j < array1.length; j++){
-	                    
 	                    if(array2[i] == array1[j]){
 	                        isSequence = true;
 	                    }else{
 	                        isSequence = false;  
 	                    }
-	                    
 	                    if(isSequence){
 	                        seqLength ++;
 	                        i++;
@@ -200,7 +202,7 @@ public class ArrayMethodHomework {
 	                        longest = seqLength;
 	                        seqLength = 0;
 	                    }else{
-	                        seqLength = 0;    
+	                        seqLength = 0;
 	                    }
 	                }
 	            }
@@ -239,7 +241,6 @@ public class ArrayMethodHomework {
 	        return arr; 
 	    }
 	    
-	    
 	    public static void cycleThrough(int[] array, int n){
 	        /** This problem represents people moving through a line.
 	         * Once they get to the front of the line, they get what they've been waiting for, then they 
@@ -266,8 +267,8 @@ public class ArrayMethodHomework {
 	         int temp;
 	         for(int i = 0; i < n; i++){
 	             temp = array[0];
-	             for(int a = 1; a < array.length; a++){
-	                 array[a-1] = array[a];
+	             for(int j = 1; j < array.length; j++){
+	                 array[j-1] = array[j];
 	             }
 	             array[array.length-1] = temp;
 	         }
