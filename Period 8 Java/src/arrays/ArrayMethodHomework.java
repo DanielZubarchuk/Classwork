@@ -76,7 +76,7 @@ public class ArrayMethodHomework {
 	         sortArray(array);
 	         
 	         stats[0] = getMean(array);
-	         stats[1] = array[];
+	         stats[1] = array[array.length - 1];
 	         stats[2] = array[0];
 	         stats[3] = getMedian(array);
 	         stats[4] = getValuesGreater(array);
@@ -84,9 +84,16 @@ public class ArrayMethodHomework {
 	         return stats;
 	    }
 	   
-		private static Object sortArray(double[] array) {
-			Object sortedArray = null;
-			return sortedArray;
+		private static void sortArray(double[] array) {
+			for(int i = 0; i < array.length; i++){
+				for( int j = i + 1; j < array.length; j++){
+					if(array[j] > array[i]){
+						double placeholder = array[i];
+						array[i] = array[j];
+						array[j] = placeholder;
+					}
+				}
+			}
 		}
 
 		private static double getMean(double[] array){
@@ -101,19 +108,48 @@ public class ArrayMethodHomework {
 	    }
 		
 		private static double getMedian(double[] array) {
-			int middle = 0;
+			int middleNum = 0;
+			if(array.length % 2 != 0){
+				middleNum = (array.length - 1) / 2;
+				return array[middleNum];
+			}
+			else{
+				middleNum = (array.length - 1) / 2;
+				return(array[middleNum] + array[middleNum + 1]) / 2;
+			}
 			
-			return 0;
 		}
 		
 		private static double getValuesLess(double[] array) {
+			double average = 0;
+			int totalNumbers = 0;
+	    	for(int i = 0; i < array.length; i++){
+	    		average = average + array[i];
+	    	}
+	    	double mean = average / array.length;
 			
-			return 0;
+			for(int j = 0; j < array.length; j++)
+				if(array[j] < mean){
+					totalNumbers++;
+				}
+				
+			return totalNumbers;
 		}
 
 		private static double getValuesGreater(double[] array) {
+			double average = 0;
+			int totalNumbers = 0;
+	    	for(int i = 0; i < array.length; i++){
+	    		average = average + array[i];
+	    	}
+	    	double mean = average / array.length;
 			
-			return 0;
+			for(int j = 0; j < array.length; j++)
+				if(array[j] >= mean){
+					totalNumbers++;
+				}
+				
+			return totalNumbers;
 		}
 		
 		
