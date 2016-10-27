@@ -86,8 +86,8 @@ public class ArrayMethodHomework {
 	   
 		private static void sortArray(double[] array) {
 			for(int i = 0; i < array.length; i++){
-				for( int j = i + 1; j < array.length; j++){
-					if(array[j] > array[i]){
+				for(int j = i + 1; j < array.length; j++){
+					if(array[j] < array[i]){
 						double placeholder = array[i];
 						array[i] = array[j];
 						array[j] = placeholder;
@@ -186,12 +186,18 @@ public class ArrayMethodHomework {
 	         * countDifferences({1,2,3},{1,3,2}) returns 2, since '2' and '3' are both present, but different locations
 	         * 
 	         * */
-	         return 0;
+	    	int difference = 0;
+	    	for (int i = 0; i < array1.length; i++) { 
+	    		if(array1[i] != array2[i]){
+	    				difference ++; 
+	   			   }
+    		}
+	    	return difference;
 	    }
 	    
 
 	    public static int longestConsecutiveSequence(int[] array1){
-	        /**This method counts the longest consequtive sequence in an array.
+	        /**This method counts the longest consecutive sequence in an array.
 	         * It does not matter where the sequence begins
 	         * If there are no consecutive numbers, the method should return '1'
 	         * 
@@ -200,8 +206,27 @@ public class ArrayMethodHomework {
 	         * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
 	         * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
 	         * */
-	        
-	        return 0;
+	    	int longestSequence = 1;
+	    	int sequenceLength = 1;
+	        for (int i = 0; i < array1.length-1; i++){
+	        	System.out.println(((array1[i+1] - array1[i]) == 1));
+	        	if ((array1[i+1] - array1[i]) == 1){
+	        		sequenceLength++;
+	        	}
+	        	else if (sequenceLength > longestSequence){
+	        		longestSequence = sequenceLength;
+	        		sequenceLength = 1;
+	        	}
+	        	else{
+	        		sequenceLength = 1;
+	        	}
+	        }
+	        if (sequenceLength > longestSequence){
+	        	return sequenceLength;
+	        }
+	        else{
+	        	return longestSequence;
+	        }
 	    }
 
 	    public static int longestSharedSequence(int[] array1, int[] array2){
@@ -217,7 +242,7 @@ public class ArrayMethodHomework {
 	         * */
 	        int longest = 1;
 	        boolean isSequence = false;
-	        int seqLength = 0;
+	        int sequenceLength = 0;
 	        if(array1.length > array2.length){
 	            for(int i = 0; i < array1.length; i++){
 	                for(int j = 0; j < array2.length; j++){
@@ -227,13 +252,13 @@ public class ArrayMethodHomework {
 	                        isSequence = false;  
 	                    }
 	                    if(isSequence){
-	                        seqLength ++;
+	                    	sequenceLength ++;
 	                        i++;
-	                    }else if(seqLength > longest){
-	                        longest = seqLength;
-	                        seqLength = 0;
+	                    }else if(sequenceLength > longest){
+	                        longest = sequenceLength;
+	                        sequenceLength = 0;
 	                    }else{
-	                        seqLength = 0;
+	                    	sequenceLength = 0;
 	                    }
 	                }
 	            }
@@ -246,19 +271,19 @@ public class ArrayMethodHomework {
 	                        isSequence = false;  
 	                    }
 	                    if(isSequence){
-	                        seqLength ++;
+	                    	sequenceLength ++;
 	                        i++;
-	                    }else if(seqLength > longest){
-	                        longest = seqLength;
-	                        seqLength = 0;
+	                    }else if(sequenceLength > longest){
+	                        longest = sequenceLength;
+	                        sequenceLength = 0;
 	                    }else{
-	                        seqLength = 0;
+	                    	sequenceLength = 0;
 	                    }
 	                }
 	            }
 	        }
-	        if(seqLength > longest){
-	            return seqLength;
+	        if(sequenceLength > longest){
+	            return sequenceLength;
 	        }else{
 	            return longest;
 	        }
