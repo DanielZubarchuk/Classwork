@@ -98,12 +98,28 @@ public class TwoDArraysIntro {
 		return false;
 	}
 
-	public static void makeGrid(){
-		String[][] field = new String [5][5];
-		for(int row = 0; row < field.length; row++){
-			for(int col = 0; col < field[row].length; col++){
-				field[row][col] = " ";
-			}
+	public static void printGrid(String[][] pic){
+		int displacementRow = 1;
+		int startRow = 0;
+		while(startRow < pic.length){
+		for (int col = 0; col < pic[0].length ; col++){
+		pic[startRow][col] = "_";
+		if (startRow+displacementRow < pic.length) pic[startRow+displacementRow][col] = "_";
+		}
+
+		startRow = startRow + displacementRow;
+		}
+		int startCol = 0;
+		int displacementCol = 2;
+		while (startCol < pic[0].length){
+		for (int row = 0; row < pic.length; row++){
+		pic[row][startCol] = "|";
+		if (startCol+displacementCol < pic[0].length) pic[row][startCol+displacementCol] = "|";
+		}
+		startCol = startCol + displacementCol;
+		}
+		for (int j = 0; j < pic[0].length; j++){
+		pic[0][j] = "_";
 		}
 	}
 	
