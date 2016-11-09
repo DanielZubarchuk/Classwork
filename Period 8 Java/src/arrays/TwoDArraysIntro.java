@@ -15,20 +15,22 @@ public class TwoDArraysIntro {
 	
 	
 	public static void main(String[] args) {
-		arr2D = new String[5][5];
-		pic = new String[5][5];
-		for(int row = 0; row < arr2D.length; row++){
-			for(int col = 0; col < arr2D[row].length; col++){
-				arr2D[row][col] = "("+row+", "+col+")";
-			}
-		}
+//		arr2D = new String[5][5];
+//		pic = new String[5][5];
+//		for(int row = 0; row < arr2D.length; row++){
+//			for(int col = 0; col < arr2D[row].length; col++){
+//				arr2D[row][col] = "("+row+", "+col+")";
+//			}
+//		}
+//		
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		
+//		startExploring();
 		
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		
-		startExploring();
+		createMap(5, 5);
 	}
 	
 	private static void startExploring() {
@@ -98,29 +100,30 @@ public class TwoDArraysIntro {
 		return false;
 	}
 
-	public static void printGrid(String[][] pic){
-		int displacementRow = 1;
-		int startRow = 0;
-		while(startRow < pic.length){
-		for (int col = 0; col < pic[0].length ; col++){
-		pic[startRow][col] = "_";
-		if (startRow+displacementRow < pic.length) pic[startRow+displacementRow][col] = "_";
+	private static void createMap(int row, int col){
+		String[][] map = new String[row*3][col*3];
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map[i].length; j++){
+				(map[i][j]) = " ";
+			}
+		}
+		for(int j = 0; j < map[0].length; j++){
+			for(int third = 0; third < row*3; third+=3){
+				map[third][j] = "_";
+			}
+			//map[3][j] = "_";
+			map[map.length-1][j] = "_";
 		}
 
-		startRow = startRow + displacementRow;
+		for(int i = 1; i < map.length; i++){
+			for(int third = 0; third < col*3; third+=3){
+				map[i][third] = "|";
+			}
+			//map[i][0] = "|";
+			map[i][map[0].length-1] = "|";
 		}
-		int startCol = 0;
-		int displacementCol = 2;
-		while (startCol < pic[0].length){
-		for (int row = 0; row < pic.length; row++){
-		pic[row][startCol] = "|";
-		if (startCol+displacementCol < pic[0].length) pic[row][startCol+displacementCol] = "|";
-		}
-		startCol = startCol + displacementCol;
-		}
-		for (int j = 0; j < pic[0].length; j++){
-		pic[0][j] = "_";
-		}
+		
+		printPic(map);
 	}
 	
 	public static void playMinesweeper(){
