@@ -17,18 +17,42 @@ public class TwoDArraysIntro {
 	public static void main(String[] args) {
 		arr2D = new String[5][5];
 		pic = new String[5][5];
-		for(int row = 0; row < arr2D.length; row++){
-			for(int col = 0; col < arr2D[row].length; col++){
-				arr2D[row][col] = "("+row+", "+col+")";
+//		for(int row = 0; row < arr2D.length; row++){
+//			for(int col = 0; col < arr2D[row].length; col++){
+//				arr2D[row][col] = "("+row+", "+col+")";
+//			}
+//		}
+//		
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		
+//		startExploring();
+		
+		int displacementRow = 1;
+		int startRow = 0;
+			while(startRow < pic.length){
+				for (int col = 0; col < pic[0].length ; col++){
+					pic[startRow][col] = "_";
+					if (startRow+displacementRow < pic.length) pic[startRow+displacementRow][col] = "_";
+				}
+
+				startRow = startRow + displacementRow;
 			}
-		}
-		
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		
-		startExploring();
+			int startCol = 0;
+			int displacementCol = 2;
+			while (startCol < pic[0].length){
+				for (int row = 0; row < pic.length; row++){
+					pic[row][startCol] = "|";
+					if (startCol+displacementCol < pic[0].length) pic[row][startCol+displacementCol] = "|";
+				}
+				startCol = startCol + displacementCol;
+			}
+			for (int j = 0; j < pic[0].length; j++){
+				pic[0][j] = "_";
+			}
+
 	}
 	
 	private static void startExploring() {
