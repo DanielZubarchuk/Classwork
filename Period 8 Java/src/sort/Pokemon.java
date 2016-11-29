@@ -11,7 +11,7 @@ public class Pokemon {
 		
 	}
 	
-	public void Pokemon(String name, int level){
+	public Pokemon(String name, int i){
 		this.name = name;
 		this.level = level;
 		hp = 100;
