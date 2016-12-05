@@ -43,5 +43,37 @@ public class SortingAlgorithms {
 			swap(arrayToSort, i, minIndex);
 		}
 	}
+	
+	public static void bubbleSort(int[] array){
+	    System.out.println("Bubble sort with "+Arrays.toString(array));
+	    for(int i=0; i < array.length-1; i++){
+	        for(int j=1; j < array.length-i; j++){
+	            if(array[j-1] > array[j]){
+	                swap(array,j-1,j);
+	                System.out.println("becomes "+Arrays.toString(array));
+	            }
+	        }
+	System.out.println("Ends as "+Arrays.toString(array));
+	    }
+	}
+	
+	public static int[] mergeSort(int[] array){
+	    if(array.length==1)return array;
+	    int half = array.length/2;//rounds down
+	    int[] firstHalf = new int[half];
+	    int[] secondHalf = new int[array.length - half];
+	    for(int i=0; i<firstHalf.length; i++){
+	        firstHalf[i]=array[i];
+	    }
+	    for(int i=0; i<secondHalf.length; i++){
+	        secondHalf[i]=array[i+firstHalf.length];
+	    }
+	    return merge(mergeSort(firstHalf),mergeSort(secondHalf));
+	}
+	 
+	public static int[] merge(int[] a, int[] b){
+		return b;
+	    //code not shown
+	}
 
 }
