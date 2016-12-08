@@ -19,6 +19,7 @@ public class GUIApplication extends JFrame{
 	public GUIApplication(){
 		// terminate program when window is closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setUndecorated(false);
 		int x = 40; 
 		int y = 40;
 		int width = 600;
