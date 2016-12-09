@@ -25,10 +25,11 @@ public abstract class Component implements Visible {
 	
 	public abstract void update(Graphics2D g);
 
-
+	
+	
 	
 	public BufferedImage getImage() {
-		return null;
+		return image;
 	}
 
 	
