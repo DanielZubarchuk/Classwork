@@ -5,18 +5,28 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import guiPractice8.component.Visible;
 
 public abstract class Screen {
 	private int width;
 	private int height;
 	protected BufferedImage image;
+	private ArrayList<Visible> viewObjects;
 	
 	public Screen(int width, int height){
+		viewObjects = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
 		initImage();
+		initObjects(viewObjects);
 		
 	}
+
+	public abstract void initObjects(ArrayList<Visible> viewObjects2);
+	
+	
 
 	private void initImage() {
 		image = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
@@ -30,6 +40,10 @@ public abstract class Screen {
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
 		
+		// draw visible components
+		for(Visible v: viewObjects){
+			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
+		}
 		
 		
 //		g.setFont(new Font("Helvetica",Font.PLAIN,20));
