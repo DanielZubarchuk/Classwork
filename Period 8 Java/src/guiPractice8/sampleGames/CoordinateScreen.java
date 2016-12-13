@@ -30,7 +30,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 		
 	}
 
-	@Override
+
 	public void mouseDragged(MouseEvent arg0) {
 		
 	}
@@ -38,7 +38,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	@Override
 	public void mouseMoved(MouseEvent m) {
 		label.setText("Mouse at" + m.getX()+", "+m.getY());
-		update();
+
 	}
 
 	public MouseMotionListener getMouseMotionListener(){
