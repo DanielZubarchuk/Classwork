@@ -26,7 +26,7 @@ public class ConnectFour {
 private static void dropPiece(String[][] board) {
 		System.out.println("Which column would you like to drop your piece in?"
 				+ "(Please indicate a number between 0 and 5)");
-		for(int )
+		
 		
 	}
 
