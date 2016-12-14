@@ -72,7 +72,7 @@ public abstract class Screen {
 		return null;
 	}
 
-	public MouseMotionListener getMotionMouseListener() {
+	public MouseMotionListener getMouseMotionListener() {
 		return null;
 	}
 }
