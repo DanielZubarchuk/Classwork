@@ -2,6 +2,7 @@ package guiPractice8.component;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
@@ -14,6 +15,16 @@ public class Button extends TextLabel implements Clickable{
 		super(x, y, w, h, text);
 		this.color = color;
 		this.action = action;
+		update();
+	}
+	
+	public Color getColor(){
+		return color;
+	}
+	
+	public void setColor(Color c){
+		color = c;
+		update();
 	}
 	
 	public void update(Graphics2D g) {
@@ -21,26 +32,31 @@ public class Button extends TextLabel implements Clickable{
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
-		
+		g.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 25);
+		g.setColor(Color.blue);
+		g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 35, 25);
+		g.setFont(new Font(getFont(),Font.PLAIN,getSize()));
+		FontMetrics fm = g.getFontMetrics();
 		
 		if(getText() != null){
-			g.fillRoundRect(50, 50, 25, 25, 30, 30);
-			g.setColor(Color.blue);
-			g.drawRoundRect(100, 40, 100, 600, 30, 30);
-			g.setFont(new Font(getFont(),Font.PLAIN,getSize()));
-			g.drawString(getText(), 4, getHeight()-5);
+			g.setColor(Color.white);
+			String t = getText();
+			int cutoff = t.length();
+			while(cutoff > 0 && fm.stringWidth(t) > getWidth()){
+				cutoff --;
+				t = t.substring(0, cutoff);
+			}
+			g.drawString(t, (getWidth()-fm.stringWidth(t))/2, (getHeight()+fm.getHeight()-fm.getDescent())/2);
 		}
 	}
 
 	@Override
 	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
 		
 	}
 
