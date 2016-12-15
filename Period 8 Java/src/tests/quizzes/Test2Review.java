@@ -8,6 +8,9 @@ public class Test2Review {
 		grid = new boolean[5][5];
 		printGrid(grid);
 		buttonClick(3,3);
+		printGrid(grid);
+		buttonClick(3,3);
+		printGrid(grid);
 
 	}
 	
@@ -67,7 +70,7 @@ public class Test2Review {
 			}
 			System.out.print("\n");
 		}
-		System.out.print("- - - - - - - - -");
+		System.out.println("- - - - - - - - -");
 	}
 	
 
