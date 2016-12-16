@@ -32,6 +32,7 @@ public class Graphic implements Visible {
 			}else{
 				
 			}
+			loadedImages = true;
 		}catch(Exception e){
 			e.printStackTrace();
 		}
