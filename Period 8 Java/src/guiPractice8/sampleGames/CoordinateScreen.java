@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import guiPractice8.Screen;
 import guiPractice8.component.Action;
 import guiPractice8.component.Button;
+import guiPractice8.component.Graphic;
 import guiPractice8.component.TextArea;
 import guiPractice8.component.TextLabel;
 import guiPractice8.component.Visible;
@@ -35,6 +36,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				
 			}
 			});
+		Graphic picture = new Graphic(50,50,"sampleImages/ghost");
+		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
