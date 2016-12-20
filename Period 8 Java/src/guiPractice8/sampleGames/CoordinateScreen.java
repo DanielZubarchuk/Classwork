@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+
 import guiPractice8.Screen;
 import guiPractice8.component.Action;
 import guiPractice8.component.Button;
@@ -28,66 +29,66 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		label = new TextLabel(40,45,760,40,"Sample Text");
-		paragraph = new TextArea(40,85,760,500,
+		paragraph = new TextArea(40,85,550,500,
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
 				+ " of the page, a new line is created.");
-		button = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+		button = new Button(40,200,80,40,"Button",
+				new Color(100,100,250),new Action() {
+			
 			public void Act() {
-				// TODO Auto-generated method stub
-				
+				MouseFollower.game.setScreen(MouseFollower.moveScreen);
 			}
-			});
-		//picture = new Graphic(50,50,100,80,"resources/sampleImages/ghost.jpg");
+		});
 		picture = new Graphic(50,50,.5,"resources/sampleImages/ghost.jpg");
-		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
-		
+		viewObjects.add(picture);
 	}
-
 
 	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseMoved(MouseEvent m) {
 		label.setText("Mouse at" + m.getX()+", "+m.getY());
-
 	}
-
+	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
 	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent m) {
+		if(button.isHovered(m.getX(), m.getY())){
+			button.act();
+		}
+	}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void mouseReleased(MouseEvent e) {
-	
-	}
 }
-
-
-
 
