@@ -40,20 +40,19 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				MouseFollower.game.setScreen(MouseFollower.moveScreen);
 			}
 		});
-		picture = new Graphic(50,50,.5,"resources/sampleImages/ghost.jpg");
+		picture = new Graphic(50,50,.5,"resources/sampleImages/ball.png");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
 		viewObjects.add(picture);
 	}
 
-	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mouseDragged(MouseEvent e) {
 		
 	}
 
 	public void mouseMoved(MouseEvent m) {
-		label.setText("Mouse at" + m.getX()+", "+m.getY());
+		label.setText("Mouse at " + m.getX()+", "+m.getY());
 	}
 	
 	public MouseMotionListener getMouseMotionListener(){
@@ -70,24 +69,19 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		}
 	}
 
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mouseEntered(MouseEvent e) {
 		
 	}
 
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mouseExited(MouseEvent e) {
 		
 	}
 
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mousePressed(MouseEvent e) {
 		
 	}
 
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseReleased(MouseEvent e) {	
 	}
 
 }

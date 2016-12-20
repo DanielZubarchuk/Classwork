@@ -14,7 +14,7 @@ import guiPractice8.component.Visible;
 
 public class MyScreen extends Screen implements MouseMotionListener, MouseListener{
 
-	private Graphic mario;
+	private Graphic secondPic;
 	private Button back;
 	
 	public MyScreen(int width, int height) {
@@ -23,23 +23,22 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		mario = new Graphic(200,200,.25,"resources/sampleImages/ghost.png");
+		secondPic = new Graphic(200,200,.25,"resources/sampleImages/ghost.jpg");
 		back = new Button(50,50,100,60,"Back", Color.GRAY, new Action() {
 			
 			public void Act() {
 				MouseFollower.game.setScreen(MouseFollower.coordScreen);
 			}
 		});
-		viewObjects.add(mario);
+		viewObjects.add(secondPic);
 		viewObjects.add(back);
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
-	public void mouseMoved(MouseEvent arg0) {
+	public void mouseMoved(MouseEvent e) {
 		
 	}
 
@@ -50,23 +49,19 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 	public MouseListener getMouseListener(){
