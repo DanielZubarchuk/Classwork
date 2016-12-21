@@ -1,7 +1,5 @@
 package guiPractice8.component;
 
-import java.awt.image.BufferedImage;
-
 public class ClickableGraphic extends Graphic implements Clickable{
 	
 	private Action action;

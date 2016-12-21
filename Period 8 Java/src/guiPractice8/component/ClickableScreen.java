@@ -3,12 +3,15 @@ package guiPractice8.component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice8.Screen;
 
-public class ClickableScreen extends Screen implements MouseListener{
+public abstract class ClickableScreen extends Screen implements MouseListener{
 
 	private ArrayList<Clickable> clickables;
+	
+	public abstract void initAllObjects(List<Visible> viewObjects);
 	
 	public ClickableScreen(int width, int height) {
 		super(width, height);
