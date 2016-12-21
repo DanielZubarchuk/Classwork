@@ -43,7 +43,7 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 	/*
 	 * 
 	 */
-	
+
 	protected abstract void initScreen();
 	
 	public void paint(Graphics g){

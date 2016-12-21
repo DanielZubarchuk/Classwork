@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import guiPractice8.Screen;
 import guiPractice8.component.Action;
 import guiPractice8.component.Button;
+import guiPractice8.component.ClickableGraphic;
 import guiPractice8.component.Graphic;
 import guiPractice8.component.Visible;
 
@@ -23,13 +24,14 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		secondPic = new Graphic(200,200,.25,"resources/sampleImages/ghost.jpg");
+		secondPic = new Graphic(200,200,.25,"resources/sampleImages/ball2.png");
 		back = new Button(50,50,100,60,"Back", Color.GRAY, new Action() {
 			
-			public void Act() {
+			public void act() {
 				MouseFollower.game.setScreen(MouseFollower.coordScreen);
 			}
 		});
+		
 		viewObjects.add(secondPic);
 		viewObjects.add(back);
 	}

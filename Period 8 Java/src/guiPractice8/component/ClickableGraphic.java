@@ -8,6 +8,7 @@ public class ClickableGraphic extends Graphic implements Clickable{
 	private int y;
 	private BufferedImage image;
 	private boolean loadedImages;
+	private Action action;
 	
 	public ClickableGraphic(int x, int y, double scale, String imageLocation) {
 		super(x, y, scale, imageLocation);
@@ -22,12 +23,21 @@ public class ClickableGraphic extends Graphic implements Clickable{
 	}
 	@Override
 	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
+		return x > getX() && x < getX()+getWidth() && y > getY() && y < getY()+getHeight();
 	}
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
+		if(action != null){
+			action.act();
+		}
+		
+	}
+	
+	public void setAction(Action a){
+		this.action = a;
+	}
+	public void setX(int i) {
+		
 		
 	}
 	
