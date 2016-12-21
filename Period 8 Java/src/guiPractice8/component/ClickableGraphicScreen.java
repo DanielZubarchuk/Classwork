@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import guiPractice8.Screen;
 import guiPractice8.component.Action;
 
-public class ClickableGraphicScreen extends Screen implements MouseMotionListener, MouseListener {
+public class ClickableGraphicScreen extends Screen implements MouseListener {
 	
 	private ClickableGraphic movedPic;
 	
@@ -60,15 +60,6 @@ public class ClickableGraphicScreen extends Screen implements MouseMotionListene
 	
 	}
 
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		
-	}
 	
 	public MouseListener getMouseListener(){
 		return this;

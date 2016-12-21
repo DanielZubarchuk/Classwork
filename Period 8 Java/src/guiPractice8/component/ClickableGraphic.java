@@ -4,10 +4,6 @@ import java.awt.image.BufferedImage;
 
 public class ClickableGraphic extends Graphic implements Clickable{
 	
-	private int x;
-	private int y;
-	private BufferedImage image;
-	private boolean loadedImages;
 	private Action action;
 	
 	public ClickableGraphic(int x, int y, double scale, String imageLocation) {
@@ -35,10 +31,6 @@ public class ClickableGraphic extends Graphic implements Clickable{
 	
 	public void setAction(Action a){
 		this.action = a;
-	}
-	public void setX(int i) {
-		
-		
 	}
 	
 
