@@ -25,7 +25,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 
 	public void initAllObjects(List<Visible> visible) {
 		moles = new ArrayList<MoleInterface>();
-//		player = getAPlayer();
+		player = getAPlayer();
 		label = new TextLabel(getWidth()/2-60, getHeight()/2-30, 120, 60, "Ready...");
 		timeLabel = new TextLabel(getWidth()/2-60, 50, 120, 60, "");
 
@@ -36,11 +36,11 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	}
 	
 	private PlayerInterface getAPlayer() {
-		 return null;
+		 return new Player(20,20, height, height);
 	}
 	
 	private MoleInterface getAMole() {
-	    return null;
+	    return new Mole((int)(getWidth()*Math.random())-100,(int)(getHeight()*Math.random());
 	}
 
 	public void update(){
