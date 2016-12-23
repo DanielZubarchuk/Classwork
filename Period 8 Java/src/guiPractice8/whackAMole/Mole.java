@@ -6,28 +6,21 @@ public class Mole extends ClickableGraphic implements MoleInterface{
 
 
 
+private double appearanceTime;
+
 public Mole(int x, int y, String imageLocation) {
-		super(x, y, imageLocation);
+		super(x, y, 0.5, "resources/sampleImages/mole.jpg");
 	}
 
-	public Mole(int x, int y, int w, int h, String imageLocation) {
-		super(x, y, w, h, imageLocation);
-		
-	}
 
-	public Mole(int x, int y, double scale, String imageLocation) {
-		super(x, y, scale, imageLocation);
-	
-	}
-
-	@Override
 	public int getAppearanceTime() {
-		return 0;
+		return (int) appearanceTime;
 	}
 
 	@Override
-	public void setAppearanceTime(int i) {
-	
+	public void setAppearanceTime(int d) {
+		this.appearanceTime = d;
+		
 	}
 
 }
