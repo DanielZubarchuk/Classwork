@@ -10,7 +10,7 @@ public class Player extends Component implements PlayerInterface{
 	
 	private int score;
 
-	public Player(int x, int y, int w, int h) {
+	public Player(int x, int y) {
 		super(x, y, 100, 100);
 		score = 0;
 	}

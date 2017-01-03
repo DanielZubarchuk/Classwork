@@ -36,13 +36,11 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	}
 	
 	private PlayerInterface getAPlayer() {
-		 //return new Player(20,20, height, height);
-		return null;
+		 return new Player(20,20);
 	}
 	
 	private MoleInterface getAMole() {
-	    //return new Mole((int)(getWidth()*Math.random())-100,(int)(getHeight()*Math.random());
-		return null;
+	    return new Mole((int)(getWidth()*Math.random())-100,(int)(getHeight()*Math.random()));
 	}
 
 	public void update(){
