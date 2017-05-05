@@ -38,7 +38,7 @@ public class ListRunner {
 	private static void printPurchasedItems() {
 		for(int i = 0; i < shoppingList.size(); i++){
 			if(shoppingList.get(i).isPurchased()){
-				System.out.println("Bought" + shoppingList.get(i).getDescription());
+				System.out.println("Bought " + shoppingList.get(i).getDescription());
 				shoppingList.remove(i);
 				i--;
 			}
